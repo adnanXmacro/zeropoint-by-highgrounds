@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ZeroPoint LTD — Fabric sourcing and import</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0c0d;--sf:#141416;--ln:#2a2a2e;--tx:#ecebea;--mu:#8f8c8a;--rd:#c8102e;--rd2:#e5384c;--ok:#5fc79a;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*:before,*:after{box-sizing:inherit}html{background:var(--bg);scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;color:var(--tx);font:16px/1.6 'IBM Plex Sans',system-ui,sans-serif}
+h1,h2,h3{font-family:'IBM Plex Serif',Georgia,serif;font-weight:500;margin:0;line-height:1.15}
+h1{font-size:clamp(34px,6vw,56px)}h2{font-size:clamp(24px,4vw,32px);margin-bottom:14px}h3{font-size:19px}p{margin:0 0 12px}a{color:var(--rd2)}
+header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 20px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--ln);z-index:5;flex-wrap:wrap}
+.logo{font:500 20px 'IBM Plex Serif',serif;color:var(--tx);text-decoration:none}.logo b{color:var(--rd2);font-weight:500}
+nav{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
+nav a{color:var(--mu);text-decoration:none;padding:7px 10px;font-weight:500;font-size:15px;border-bottom:2px solid transparent}nav a.on,nav a:hover{color:var(--tx);border-color:var(--rd)}
+button{font:500 15px 'IBM Plex Sans',sans-serif;color:var(--tx);background:none;border:1px solid var(--ln);padding:8px 14px;border-radius:4px;cursor:pointer}
+button.p{background:var(--rd);border-color:var(--rd);color:#fff}button:hover{border-color:var(--rd2)}button:disabled{opacity:.45;cursor:not-allowed}
+:focus-visible{outline:2px solid var(--rd2);outline-offset:2px}
+main{max-width:1080px;margin:0 auto;padding:26px 20px 60px}
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:36px;align-items:center;padding:20px 0 40px}.hero p{color:#c9c5c2;font-size:18px;max-width:52ch;margin:16px 0 22px}
+.frame{margin:0;border:1px solid var(--ln);border-radius:4px;overflow:hidden;background:var(--sf)}.frame img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.btns{display:flex;gap:10px;flex-wrap:wrap}.btns button{padding:11px 20px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border:1px solid var(--ln);border-radius:4px;margin:10px 0 44px}.facts div{padding:14px 16px;border-right:1px solid var(--ln)}.facts b{display:block}.facts span{color:var(--mu);font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:44px}.steps div{border-top:2px solid var(--rd);background:var(--sf);padding:16px}.steps p{color:#bdb8b5;margin:6px 0 0;font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:4px;padding:0 16px 16px;display:flex;flex-direction:column;gap:8px}
+.sw{height:54px;margin:0 -16px 4px}
+.tag{display:inline-block;font-size:13px;font-weight:500;padding:1px 9px;border:1px solid var(--rd2);color:var(--rd2);border-radius:3px}.tag.g{border-color:var(--ok);color:var(--ok)}.tag.x{border-color:var(--mu);color:var(--mu)}
+.mu{color:var(--mu);font-size:14px}.price{font:500 24px 'IBM Plex Serif',serif}
+.bar{height:6px;background:#2a2a2e;border-radius:3px;overflow:hidden}.bar i{display:block;height:100%;background:var(--rd)}
+label{display:block;font-size:14px;color:var(--mu);margin:8px 0 3px}
+input,select{width:100%;background:#0f0f10;color:var(--tx);border:1px solid var(--ln);border-radius:4px;padding:9px;font:16px 'IBM Plex Sans',sans-serif}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.math{background:#0f0f10;border:1px solid var(--ln);border-radius:4px;padding:12px;font:13px/1.7 ui-monospace,Menlo,monospace;color:#d4d0cd;overflow-x:auto;white-space:pre}
+.panel{background:var(--sf);border:1px solid var(--ln);border-radius:4px;padding:18px;margin-bottom:18px}
+.scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--ln);white-space:nowrap}th{color:var(--mu);font-weight:500}
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:start}.crumb{font-size:14px;margin-bottom:14px}.crumb a{text-decoration:none}
+.trk{display:flex;gap:4px;margin-top:6px}.trk i{flex:1;height:5px;background:#2a2a2e;border-radius:3px}.trk i.d{background:var(--rd)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--rd);color:#fff;padding:10px 16px;border-radius:4px;z-index:9;max-width:90vw}
+.gbtn{background:#fff;color:#222;border-color:#fff;display:inline-flex;align-items:center;gap:8px}
+footer{border-top:1px solid var(--ln);padding:24px 20px;text-align:center;color:var(--mu);font-size:14px}footer a{color:var(--mu);margin:0 8px}
+@media(max-width:760px){.hero,.two{grid-template-columns:1fr}.frame img{aspect-ratio:16/10}}
+.dots{display:flex;gap:5px;flex-wrap:wrap}.dots i{width:14px;height:14px;border-radius:50%;border:1px solid #444}.dots.big{gap:8px}.dot{width:30px;height:30px;border-radius:50%;padding:0;border:2px solid #444}.dot.on{outline:2px solid var(--rd2);outline-offset:2px}details summary{cursor:pointer}</style><meta name="description" content="ZeroPoint LTD sources and imports fabric for Bangladesh clothing shops, boutiques and tailors.">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="/app.js" defer></script>
+</head><body>
+<header><a class="logo" href="#home">Zero<b>Point</b> LTD</a><nav id="nav"></nav></header>
+<main id="app"></main>
+<footer><a href="#market">Marketplace</a><a href="#about">About</a><a href="#orders">My orders</a><br>© ZeroPoint LTD, a wing of HighGrounds by projectAdnan. Prices are quotes. Shade can vary between dye lots.</footer>
+</body></html>

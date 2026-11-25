@@ -1,0 +1,20 @@
+name = "zeropoint"
+main = "src/worker.js"
+compatibility_date = "2025-03-01"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = ["/api/*"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "zeropoint-db"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+
+[vars]
+# Not secrets, safe to commit. Edit, commit, and Cloudflare redeploys.
+GOOGLE_CLIENT_ID = ""
+ADMIN_EMAILS = ""
+DEV_LOGIN = "0"

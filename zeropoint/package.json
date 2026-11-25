@@ -1,0 +1,1 @@
+{"name":"zeropoint","private":true,"version":"1.0.0","scripts":{"dev":"wrangler dev","deploy":"wrangler deploy","db:local":"wrangler d1 execute zeropoint-db --local --file=db/setup.sql","db:remote":"wrangler d1 execute zeropoint-db --remote --file=db/setup.sql"},"devDependencies":{"wrangler":"^4.0.0"}}
